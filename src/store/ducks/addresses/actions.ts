@@ -1,6 +1,8 @@
-import { action } from 'typesafe-actions';
-import { AddressesTypes, Address } from "./types";
+import { AddressesTypes } from "./types";
+import {FactoryActionsTypes} from "../../factories/factoryActionsTypes";
 
-export const loadRequest = (cep: number) => action(AddressesTypes.LOAD_REQUEST, { cep });
-export const loadSuccess = (data: Address) => action(AddressesTypes.LOAD_SUCCESS, { data });
-export const loadFailure = () => action(AddressesTypes.LOAD_FAILURE);
+const actions = new FactoryActionsTypes(AddressesTypes);
+
+export const doRequest = actions.doRequest;
+export const requestSuccess = actions.requestSuccess;
+export const requestFailure = actions.requestFailure;

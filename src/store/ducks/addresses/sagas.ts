@@ -1,6 +1,6 @@
 import { call, put } from "redux-saga/effects";
 import api from "../../../services/apiCep";
-import { loadSuccess, loadFailure } from "./actions";
+import { requestSuccess, requestFailure } from "./actions";
 import {AnyAction} from "redux";
 
 
@@ -9,13 +9,14 @@ function getAddress(cep:string) {
 }
 
 export default function* loadAddress (action:AnyAction) {
-    console.log(action.payload.cep);
+    const { param, callback } = action.payload;
     try {
-        const response = yield call(getAddress, action.payload.cep);
-
-        yield put(loadSuccess(response.data));
+        const response = yield call(getAddress, param);
+        yield put(requestSuccess(response.data));
+        if (typeof callback === 'function') callback('success', response);
     }
     catch (e) {
-        yield put(loadFailure());
+        yield put(requestFailure());
+        if (typeof callback === 'function') callback('error', e);
     }
 }
