@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
-import repositories from "./repositories"
-import addresses from "./addresses"
+import blank from "./blank"
 
 export default combineReducers({
-    repositories,
-    addresses
+    blank
 });
