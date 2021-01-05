@@ -12,7 +12,7 @@
     "@types/react-bootstrap": "^0.32.20",
     "@types/react-dom": "^16.9.0",
     "animate.css": "^3.7.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "history": "^4.10.1",
     "react": "^16.12.0",
