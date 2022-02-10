@@ -55,6 +55,6 @@
     "@types/react-router-dom": "^5.1.3",
     "@types/react-wow": "^1.0.0",
     "@types/redux-saga": "^0.10.5",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   }
 }
